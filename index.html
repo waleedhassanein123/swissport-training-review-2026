@@ -13,20 +13,20 @@
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased min-h-screen">
 
-    <!-- Top Navigation Bar -->
+    <!-- Top Executive Navigation Bar -->
     <header class="bg-slate-800 border-b border-slate-700 px-6 py-4 flex justify-between items-center shadow-md">
         <div class="flex items-center space-x-3">
-            <div class="bg-blue-600 p-2.5 rounded-lg text-white">
+            <div class="bg-blue-600 p-2.5 rounded-lg text-white shadow-lg shadow-blue-500/30">
                 <i class="fa-solid fa-plane-departure text-xl"></i>
             </div>
             <div>
-                <h1 class="text-xl font-bold tracking-wide">Training & Compliance Dashboard</h1>
-                <p class="text-xs text-slate-400">Operational Oversight & Live Analytics</p>
+                <h1 class="text-xl font-bold tracking-wide">Training & Compliance Executive Dashboard</h1>
+                <p class="text-xs text-slate-400">Operational Oversight & Live Analytics 2026</p>
             </div>
         </div>
         <div class="flex items-center space-x-4">
-            <span class="text-xs bg-emerald-500/20 text-emerald-400 font-semibold px-3 py-1.5 rounded-full border border-emerald-500/30">
-                <i class="fa-solid fa-circle text-[8px] mr-1.5 animate-pulse"></i> Live Data Synced
+            <span class="text-xs bg-emerald-500/20 text-emerald-400 font-semibold px-3 py-1.5 rounded-full border border-emerald-500/30 flex items-center">
+                <i class="fa-solid fa-circle text-[8px] mr-2 animate-pulse"></i> Live Sync Active
             </span>
         </div>
     </header>
@@ -38,7 +38,7 @@
         <section class="bg-slate-800 p-5 rounded-xl border border-slate-700 shadow-lg">
             <div class="flex items-center justify-between mb-4">
                 <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-400 flex items-center">
-                    <i class="fa-solid fa-filter mr-2 text-blue-400"></i> Global Filters
+                    <i class="fa-solid fa-filter mr-2 text-blue-400"></i> Global Executive Filters
                 </h2>
                 <button onclick="resetFilters()" class="text-xs text-blue-400 hover:text-blue-300 transition-colors underline">
                     Reset All Filters
@@ -97,7 +97,7 @@
             </div>
         </section>
 
-        <!-- KPI Scorecards Section -->
+        <!-- KPI Scorecards Section (Fully Reactive) -->
         <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <!-- Scorecard 1: Total Sessions -->
             <div class="bg-slate-800 p-5 rounded-xl border border-slate-700 shadow-md relative overflow-hidden">
@@ -167,7 +167,7 @@
         <!-- Chart Section -->
         <section class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-lg">
             <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-4 flex items-center">
-                <i class="fa-solid fa-chart-bar mr-2 text-blue-400"></i> Trainee Distribution by Station (Filtered)
+                <i class="fa-solid fa-chart-bar mr-2 text-blue-400"></i> Trainee Distribution by Station (Filtered View)
             </h3>
             <div class="relative h-72 w-full">
                 <canvas id="stationChart"></canvas>
@@ -176,9 +176,9 @@
 
     </main>
 
-    <!-- JavaScript Engine for Instant Filtering -->
+    <!-- JavaScript Data Engine & Instant Filtering Logic -->
     <script>
-        // Master Dataset (Mock training records connected to filters)
+        // Master Training Dataset
         const trainingData = [
             { id: 1, module: "IATA DGR", station: "JED", timeline: "Q1", instructor: "Waleed Mostafa", trainees: 45, score: 92, compliance: 100 },
             { id: 2, module: "IGOM Ground Ops", station: "DMM", timeline: "Q1", instructor: "Ahmed Al-Ghamdi", trainees: 30, score: 88, compliance: 98 },
@@ -213,6 +213,7 @@
             const time = document.getElementById('filterTimeline').value;
             const inst = document.getElementById('filterInstructor').value;
 
+            // Filter dataset based on all 4 dropdowns simultaneously
             const filtered = trainingData.filter(item => {
                 return (mod === "All" || item.module === mod) &&
                        (stat === "All" || item.station === stat) &&
@@ -236,6 +237,7 @@
                 avgCompliance = (data.reduce((sum, item) => sum + item.compliance, 0) / totalSessions).toFixed(1);
             }
 
+            // Update DOM scorecard elements instantly
             document.getElementById('cardSessions').innerText = totalSessions;
             document.getElementById('cardTrainees').innerText = totalTrainees;
             document.getElementById('cardScore').innerText = avgScore + '%';
@@ -270,7 +272,6 @@
         }
 
         function updateChart(data) {
-            // Aggregate trainees by station for filtered dataset
             const stationMap = {};
             data.forEach(item => {
                 stationMap[item.station] = (stationMap[item.station] || 0) + item.trainees;
@@ -281,7 +282,7 @@
             stationChartInstance.update();
         }
 
-        // Initialize on load
+        // Initialize dashboard on window load
         window.onload = initDashboard;
     </script>
 </body>
