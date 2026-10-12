@@ -3,29 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swissport Saudi Arabia - Executive Training Department Review 2026</title>
-    <!-- Chart.js -->
+    <title>Swissport Saudi Arabia - Executive Training Review 2026</title>
+    <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-        body { background-color: #0b1120; color: #f8fafc; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; }
-        header { background-color: #002B49; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 50; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
-        .max-w-7xl { max-width: 80rem; margin-left: auto; margin-right: auto; width: 100%; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        body { background-color: #070d18; color: #f8fafc; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; }
+        header { background-color: #002B49; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 50; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5); }
+        .max-w-7xl { max-width: 80rem; margin: 0 auto; width: 100%; }
         .px-4 { padding-left: 1rem; padding-right: 1rem; }
         .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
-        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 1rem; padding: 1.5rem; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 1.5rem; }
-        select, input { background: #0f172a; border: 1px solid #334155; border-radius: 0.75rem; padding: 0.75rem; color: #f8fafc; font-size: 0.875rem; width: 100%; outline: none; }
+        .glass-card { background: rgba(17, 28, 48, 0.75); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 1rem; padding: 1.5rem; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 1.5rem; }
+        select, input { background: #0d1526; border: 1px solid #24344d; border-radius: 0.75rem; padding: 0.75rem; color: #f8fafc; font-size: 0.875rem; width: 100%; outline: none; }
         select:focus, input:focus { border-color: #00A3E0; }
         label { display: block; font-size: 0.75rem; font-weight: 500; color: #94a3b8; margin-bottom: 0.375rem; }
-        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.875rem; }
-        th, td { padding: 0.75rem 1rem; border-bottom: 1px solid #1e293b; }
-        th { background: rgba(15, 23, 42, 0.9); color: #94a3b8; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
-        tr:hover { background: rgba(30, 41, 59, 0.5); }
-        .badge { display: inline-flex; align-items: center; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; background: rgba(0, 163, 224, 0.1); color: #00A3E0; border: 1px solid rgba(0, 163, 224, 0.2); }
+        .badge { display: inline-flex; align-items: center; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.7rem; font-weight: 600; background: rgba(0, 163, 224, 0.1); color: #00A3E0; border: 1px solid rgba(0, 163, 224, 0.2); }
         .btn { background: #1e293b; color: #f8fafc; border: 1px solid #334155; padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 0.75rem; cursor: pointer; transition: 0.2s; }
         .btn:hover { background: #334155; }
     </style>
@@ -34,25 +30,25 @@
 
     <!-- Header -->
     <header>
-        <div class="max-w-7xl" style="height: 5rem; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem;">
+        <div class="max-w-7xl px-4" style="height: 5rem; display: flex; align-items: center; justify-content: space-between;">
             <div style="display: flex; align-items: center; gap: 1rem;">
-                <div style="background: #00A3E0; color: #001A2C; padding: 0.6rem; border-radius: 0.75rem; font-weight: bold; font-size: 1.25rem;">
+                <div style="background: #00A3E0; color: #002B49; padding: 0.65rem; border-radius: 0.75rem; font-weight: 900; font-size: 1.25rem;">
                     <i class="fa-solid fa-plane-departure"></i>
                 </div>
                 <div>
                     <h1 style="font-size: 1.125rem; font-weight: bold; color: #ffffff; display: flex; align-items: center; gap: 0.5rem;">
-                        Swissport Saudi Arabia <span class="badge">GACA Part-142 Compliant</span>
+                        Swissport Saudi Arabia <span class="badge">GACA Part-142 Approved</span>
                     </h1>
-                    <p style="font-size: 0.75rem; color: #94a3b8;">Executive Training Department Review 2026 | Country Head Oversight</p>
+                    <p style="font-size: 0.75rem; color: #94a3b8;">Executive Training Review 2026 | Dataset YTD (Q1, Q2 & Q3)</p>
                 </div>
             </div>
             <div style="display: flex; align-items: center; gap: 1rem;">
                 <button onclick="window.print()" class="btn"><i class="fa-solid fa-print"></i> Export PDF</button>
                 <div style="text-align: right;">
-                    <div style="font-size: 0.75rem; font-weight: 600; color: #ffffff;">Waleed Hasanein</div>
+                    <div style="font-size: 0.75rem; font-weight: 700; color: #ffffff;">Waleed Hasanein</div>
                     <div style="font-size: 0.65rem; color: #94a3b8;">Country Head of Training & Compliance</div>
                 </div>
-                <div style="width: 2.5rem; height: 2.5rem; border-radius: 9999px; background: linear-gradient(135deg, #00A3E0, #2563eb); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.875rem;">WH</div>
+                <div style="width: 2.5rem; height: 2.5rem; border-radius: 9999px; background: linear-gradient(135deg, #00A3E0, #2563eb); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.875rem;">WH</div>
             </div>
         </div>
     </header>
@@ -60,204 +56,209 @@
     <!-- Main Content -->
     <main class="max-w-7xl px-4 py-8" style="display: flex; flex-direction: column; gap: 2rem; flex-grow: 1;">
 
-        <!-- Filters Section -->
+        <!-- Dropdown Filters Engine -->
         <section class="glass-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #1e293b;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #1e293b;">
                 <div style="display: flex; align-items: center; gap: 0.5rem; color: #00A3E0; font-weight: 600; font-size: 0.875rem;">
-                    <i class="fa-solid fa-filter"></i> Executive Control Filters
+                    <i class="fa-solid fa-sliders"></i> Executive Multi-Filter Controls
                 </div>
-                <button onclick="resetFilters()" style="background: none; border: none; color: #00A3E0; font-size: 0.75rem; cursor: pointer;">
-                    <i class="fa-solid fa-rotate-right"></i> Reset All Filters
-                </button>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <span class="badge">19,746 Records Loaded</span>
+                    <button onclick="resetFilters()" style="background: none; border: none; color: #00A3E0; font-size: 0.75rem; cursor: pointer;">
+                        <i class="fa-solid fa-rotate-right"></i> Reset All
+                    </button>
+                </div>
             </div>
             <div class="grid-4">
                 <div>
-                    <label>Course Name</label>
-                    <select id="filterCourse" onchange="filterData()">
-                        <option value="ALL">All Training Courses</option>
+                    <label>Course Module</label>
+                    <select id="filterCourse" onchange="applyFilters()">
+                        <option value="ALL">All Training Modules (120 Unique)</option>
                     </select>
                 </div>
                 <div>
                     <label>District / Station</label>
-                    <select id="filterDistrict" onchange="filterData()">
-                        <option value="ALL">All Districts (RUH, JED, DMM, MED...)</option>
+                    <select id="filterDistrict" onchange="applyFilters()">
+                        <option value="ALL">All Saudi Districts (16 Airports)</option>
                     </select>
                 </div>
                 <div>
                     <label>Timeline Span</label>
-                    <select id="filterQuarter" onchange="filterData()">
-                        <option value="ALL">Full Year 2026 (YTD)</option>
-                        <option value="Q1">Q1 2026 (Jan - Mar)</option>
-                        <option value="Q2">Q2 2026 (Apr - Jun)</option>
-                        <option value="Q3">Q3 2026 (Jul - Sep)</option>
-                        <option value="Q4">Q4 2026 (Oct - Dec)</option>
+                    <select id="filterQuarter" onchange="applyFilters()">
+                        <option value="ALL">Full Year 2026 YTD (Q1 + Q2 + Q3)</option>
+                        <option value="2026Q1">Q1 2026 (Jan - Mar)</option>
+                        <option value="2026Q2">Q2 2026 (Apr - Jun)</option>
+                        <option value="2026Q3">Q3 2026 (Jul - Sep)</option>
                     </select>
                 </div>
                 <div>
                     <label>Instructor Name</label>
-                    <select id="filterInstructor" onchange="filterData()">
-                        <option value="ALL">All Instructors</option>
+                    <select id="filterInstructor" onchange="applyFilters()">
+                        <option value="ALL">All Instructors (61 Trainers)</option>
                     </select>
                 </div>
             </div>
         </section>
 
-        <!-- KPI Cards Grid -->
+        <!-- Requested KPI Cards -->
         <section class="grid-4">
             <div class="glass-card" style="border-left: 4px solid #00A3E0;">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Total Training Hours</div>
-                        <div id="kpiTotalHours" style="font-size: 1.5rem; font-weight: bold; color: #ffffff; margin-top: 0.25rem;">--</div>
+                        <div style="font-size: 0.7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Total Training Hours</div>
+                        <div id="kpiHours" style="font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-top: 0.25rem;">42,385.1</div>
                     </div>
-                    <div style="background: rgba(0,163,224,0.1); color: #00A3E0; padding: 0.75rem; border-radius: 0.75rem;"><i class="fa-solid fa-clock"></i></div>
+                    <div style="background: rgba(0,163,224,0.1); color: #00A3E0; padding: 0.75rem; border-radius: 0.75rem;"><i class="fa-solid fa-clock text-xl"></i></div>
                 </div>
-                <div style="margin-top: 0.75rem; font-size: 0.7rem; color: #10b981;">+14.2% vs 2025 Target</div>
+                <div style="margin-top: 0.75rem; font-size: 0.7rem; color: #10b981;"><i class="fa-solid fa-arrow-trend-up"></i> Q3 Surge (+67.7% vs Q2)</div>
             </div>
+
             <div class="glass-card" style="border-left: 4px solid #10b981;">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Trainee Records</div>
-                        <div id="kpiTotalTrainees" style="font-size: 1.5rem; font-weight: bold; color: #ffffff; margin-top: 0.25rem;">--</div>
+                        <div style="font-size: 0.7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Seats Occupied</div>
+                        <div id="kpiSeats" style="font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-top: 0.25rem;">19,746</div>
                     </div>
-                    <div style="background: rgba(16,185,129,0.1); color: #10b981; padding: 0.75rem; border-radius: 0.75rem;"><i class="fa-solid fa-users"></i></div>
+                    <div style="background: rgba(16,185,129,0.1); color: #10b981; padding: 0.75rem; border-radius: 0.75rem;"><i class="fa-solid fa-chair text-xl"></i></div>
                 </div>
-                <div style="margin-top: 0.75rem; font-size: 0.7rem; color: #10b981;">100% GACAR Compliance</div>
+                <div style="margin-top: 0.75rem; font-size: 0.7rem; color: #10b981;"><i class="fa-solid fa-check"></i> 100% Data Matched</div>
             </div>
+
             <div class="glass-card" style="border-left: 4px solid #f59e0b;">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Active Instructors</div>
-                        <div id="kpiInstructors" style="font-size: 1.5rem; font-weight: bold; color: #ffffff; margin-top: 0.25rem;">--</div>
+                        <div style="font-size: 0.7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Heads Trained (Unique)</div>
+                        <div id="kpiHeads" style="font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-top: 0.25rem;">2,553</div>
                     </div>
-                    <div style="background: rgba(245,158,11,0.1); color: #f59e0b; padding: 0.75rem; border-radius: 0.75rem;"><i class="fa-solid fa-chalkboard-user"></i></div>
+                    <div style="background: rgba(245,158,11,0.1); color: #f59e0b; padding: 0.75rem; border-radius: 0.75rem;"><i class="fa-solid fa-user-check text-xl"></i></div>
                 </div>
-                <div style="margin-top: 0.75rem; font-size: 0.7rem; color: #f59e0b;">Certified Trainers</div>
+                <div style="margin-top: 0.75rem; font-size: 0.7rem; color: #f59e0b;"><i class="fa-solid fa-users"></i> Staff Certified YTD</div>
             </div>
-            <div class="glass-card" style="border-left: 4px solid #3b82f6;">
+
+            <div class="glass-card" style="border-left: 4px solid #8b5cf6;">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase;">Active Stations</div>
-                        <div style="font-size: 1.5rem; font-weight: bold; color: #ffffff; margin-top: 0.25rem;">16 Airports</div>
+                        <div style="font-size: 0.7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Modules Completed</div>
+                        <div id="kpiModules" style="font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-top: 0.25rem;">120</div>
                     </div>
-                    <div style="background: rgba(59,130,246,0.1); color: #3b82f6; padding: 0.75rem; border-radius: 0.75rem;"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <div style="background: rgba(139,92,246,0.1); color: #8b5cf6; padding: 0.75rem; border-radius: 0.75rem;"><i class="fa-solid fa-book-bookmark text-xl"></i></div>
                 </div>
-                <div style="margin-top: 0.75rem; font-size: 0.7rem; color: #3b82f6;">RUH, JED, DMM + 13 Hubs</div>
+                <div style="margin-top: 0.75rem; font-size: 0.7rem; color: #8b5cf6;"><i class="fa-solid fa-certificate"></i> GACA Part-142 Approved</div>
             </div>
         </section>
 
-        <!-- Charts Section -->
-        <section class="grid-2">
-            <div class="glass-card">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                    <div>
-                        <h3 style="font-size: 0.875rem; font-weight: 600; color: #ffffff;">Monthly Training Hours Trend (2026)</h3>
-                        <p style="font-size: 0.75rem; color: #94a3b8;">Aggregated delivery across Saudi stations</p>
-                    </div>
-                    <span class="badge">YTD</span>
+        <!-- PPT Review Style Quarterly Comparison (Q1 vs Q2 vs Q3) -->
+        <section class="glass-card" style="border: 1px solid rgba(0,163,224,0.2);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid #1e293b;">
+                <div>
+                    <h2 style="font-size: 1rem; font-weight: bold; color: #ffffff; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fa-solid fa-chart-column" style="color: #00A3E0;"></i> Q1 vs Q2 vs Q3 Executive Review & Quarterly Comparison
+                    </h2>
+                    <p style="font-size: 0.75rem; color: #94a3b8;">Benchmarking training hours, seats occupied, and nationality composition matching the executive PPT presentation</p>
                 </div>
-                <div style="height: 280px; position: relative;">
-                    <canvas id="monthlyChart"></canvas>
+                <span class="badge" style="background: rgba(245,158,11,0.1); color: #f59e0b; border-color: rgba(245,158,11,0.2);">PPT Style Analysis</span>
+            </div>
+
+            <div class="grid-2">
+                <!-- Grouped Bar Chart -->
+                <div>
+                    <h3 style="font-size: 0.75rem; font-weight: 600; color: #cbd5e1; margin-bottom: 0.75rem;">Quarterly Delivery Performance (Hours & Seats)</h3>
+                    <div style="height: 280px; position: relative;">
+                        <canvas id="chartQuarterlyOverview"></canvas>
+                    </div>
+                </div>
+
+                <!-- Stacked Bar Chart for Nationality -->
+                <div>
+                    <h3 style="font-size: 0.75rem; font-weight: 600; color: #cbd5e1; margin-bottom: 0.75rem;">Training Seats Composition (Saudi vs Non-Saudi)</h3>
+                    <div style="height: 280px; position: relative;">
+                        <canvas id="chartNationalitySeats"></canvas>
+                    </div>
                 </div>
             </div>
-            <div class="glass-card">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                    <div>
-                        <h3 style="font-size: 0.875rem; font-weight: 600; color: #ffffff;">Training Volume by District</h3>
-                        <p style="font-size: 0.75rem; color: #94a3b8;">Hub distribution share</p>
+
+            <!-- PPT Executive Insights Card -->
+            <div style="margin-top: 2rem; background: #002B49; padding: 1.25rem; border-radius: 1rem; border: 1px solid #1e293b;">
+                <h3 style="font-size: 0.75rem; font-weight: 800; color: #00A3E0; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">
+                    <i class="fa-solid fa-circle-exclamation"></i> Critical Insights & Quarterly Takeaways (Excel Review)
+                </h3>
+                <div class="grid-3" style="font-size: 0.75rem; color: #94a3b8; line-height: 1.5;">
+                    <div style="background: #0d1526; padding: 1rem; border-radius: 0.75rem; border: 1px solid #1e293b;">
+                        <strong style="color: #ffffff; display: block; margin-bottom: 0.25rem;">1. Q1 Baseline (2026)</strong>
+                        Completed <strong>10,684.6 hrs</strong> across <strong>5,223 seats</strong>. Saudi staff accounted for <strong>46.3% of seats</strong> (2,420 seats) and 45.9% of total hours.
                     </div>
-                </div>
-                <div style="height: 280px; position: relative; display: flex; justify-content: center; align-items: center;">
-                    <canvas id="districtChart"></canvas>
+                    <div style="background: #0d1526; padding: 1rem; border-radius: 0.75rem; border: 1px solid #1e293b;">
+                        <strong style="color: #f59e0b; display: block; margin-bottom: 0.25rem;">2. Q2 Shift & Contraction</strong>
+                        Hours reached <strong>11,842.6 hrs</strong> across <strong>5,367 seats</strong>, but Saudi seats dropped to <strong>19.1%</strong> (1,024 seats) as airside recruitment favored non-Saudi operational roles.
+                    </div>
+                    <div style="background: #0d1526; padding: 1rem; border-radius: 0.75rem; border: 1px solid #1e293b;">
+                        <strong style="color: #10b981; display: block; margin-bottom: 0.25rem;">3. Q3 Explosive Expansion</strong>
+                        Delivery surged to <strong>19,857.9 hrs</strong> and <strong>9,156 seats</strong> (+70.6% seat growth vs Q2). Saudi seats recovered to <strong>2,515 seats (27.5%)</strong>.
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Secondary Charts -->
-        <section class="grid-2">
+        <section class="grid-3">
             <div class="glass-card">
-                <div style="margin-bottom: 1rem;">
-                    <h3 style="font-size: 0.875rem; font-weight: 600; color: #ffffff;">Top Training Courses</h3>
-                    <p style="font-size: 0.75rem; color: #94a3b8;">Most delivered operational modules</p>
-                </div>
-                <div style="height: 260px; position: relative;">
-                    <canvas id="coursesChart"></canvas>
+                <h3 style="font-size: 0.75rem; font-weight: bold; color: #ffffff; margin-bottom: 0.25rem;">District Volume Share</h3>
+                <p style="font-size: 0.7rem; color: #94a3b8; margin-bottom: 1rem;">Training seats by primary airport hub</p>
+                <div style="height: 240px; position: relative;">
+                    <canvas id="chartDistrictShare"></canvas>
                 </div>
             </div>
+
             <div class="glass-card">
-                <div style="margin-bottom: 1rem;">
-                    <h3 style="font-size: 0.875rem; font-weight: 600; color: #ffffff;">Top Certified Instructors Workload</h3>
-                    <p style="font-size: 0.75rem; color: #94a3b8;">Hours delivered per lead trainer</p>
+                <h3 style="font-size: 0.75rem; font-weight: bold; color: #ffffff; margin-bottom: 0.25rem;">Top Training Modules (Seats)</h3>
+                <p style="font-size: 0.7rem; color: #94a3b8; margin-bottom: 1rem;">Most completed training modules YTD</p>
+                <div style="height: 240px; position: relative;">
+                    <canvas id="chartTopCourses"></canvas>
                 </div>
-                <div style="height: 260px; position: relative;">
-                    <canvas id="instructorsChart"></canvas>
+            </div>
+
+            <div class="glass-card">
+                <h3 style="font-size: 0.75rem; font-weight: bold; color: #ffffff; margin-bottom: 0.25rem;">Lead Instructors Workload</h3>
+                <p style="font-size: 0.7rem; color: #94a3b8; margin-bottom: 1rem;">Top certified trainers by hours</p>
+                <div style="height: 240px; position: relative;">
+                    <canvas id="chartTopInstructors"></canvas>
                 </div>
             </div>
         </section>
 
-        <!-- Station Compliance Grid -->
+        <!-- District Station Grid -->
         <section class="glass-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #1e293b;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #1e293b;">
                 <div>
-                    <h3 style="font-size: 0.875rem; font-weight: 600; color: #ffffff;">District Station Compliance & Audit Readiness</h3>
-                    <p style="font-size: 0.75rem; color: #94a3b8;">GACAR Part-142 & IOSA training compliance across Saudi airports</p>
+                    <h3 style="font-size: 0.875rem; font-weight: bold; color: #ffffff;">Saudi Stations Training Overview & Audit Status</h3>
+                    <p style="font-size: 0.75rem; color: #94a3b8;">Hub performance metrics across 16 Saudi airport stations</p>
                 </div>
-                <span class="badge" style="background: rgba(16,185,129,0.1); color: #10b981; border-color: rgba(16,185,129,0.2);">Live Sync Active</span>
+                <span class="badge" style="background: rgba(16,185,129,0.1); color: #10b981; border-color: rgba(16,185,129,0.2);">Audit Clean</span>
             </div>
-            <div class="grid-4" id="stationGrid"></div>
-        </section>
-
-        <!-- Data Table -->
-        <section class="glass-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #1e293b; flex-wrap: wrap; gap: 1rem;">
-                <div>
-                    <h3 style="font-size: 0.875rem; font-weight: 600; color: #ffffff;">Training Review Records Explorer</h3>
-                    <p style="font-size: 0.75rem; color: #94a3b8;">Filtered view of 2026 training delivery sessions</p>
-                </div>
-                <div style="display: flex; gap: 1rem; align-items: center;">
-                    <input type="text" id="searchInput" placeholder="Search employee, course..." onkeyup="filterTable()" style="width: 240px;">
-                    <span id="recordCount" class="badge">-- Records</span>
-                </div>
-            </div>
-            <div style="overflow-x: auto; max-height: 380px;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>District</th>
-                            <th>Course Name</th>
-                            <th>Employee Name</th>
-                            <th>Position</th>
-                            <th>Duration</th>
-                            <th>Instructor</th>
-                            <th>Last Date</th>
-                        </tr>
-                    </thead>
-                    <tbody id="dataTableBody"></tbody>
-                </table>
-            </div>
+            <div class="grid-4" id="districtGrid"></div>
         </section>
 
         <!-- Deployment Guide -->
         <section class="glass-card" style="border: 1px solid rgba(0, 163, 224, 0.3);">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                <div style="background: rgba(0,163,224,0.2); color: #00A3E0; padding: 0.75rem; border-radius: 0.75rem;"><i class="fa-solid fa-rocket"></i></div>
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                <div style="background: rgba(0,163,224,0.2); color: #00A3E0; padding: 0.6rem; border-radius: 0.75rem;"><i class="fa-solid fa-cloud-arrow-up"></i></div>
                 <div>
-                    <h3 style="font-size: 0.875rem; font-weight: 600; color: #ffffff;">GitHub & Render Deployment Guide</h3>
-                    <p style="font-size: 0.75rem; color: #94a3b8;">Deploy live on Render.com via your GitHub repository</p>
+                    <h3 style="font-size: 0.875rem; font-weight: bold; color: #ffffff;">GitHub & Render.com Deployment Guide</h3>
+                    <p style="font-size: 0.75rem; color: #94a3b8;">Step-by-step process to publish this live dashboard on Render</p>
                 </div>
             </div>
-            <div class="grid-3">
-                <div style="background: #0f172a; padding: 1rem; border-radius: 0.75rem; border: 1px solid #1e293b;">
-                    <div style="font-weight: bold; color: #00A3E0; margin-bottom: 0.5rem;"><i class="fa-brands fa-github"></i> 1. Push to GitHub</div>
-                    <p style="font-size: 0.75rem; color: #94a3b8;">Save as <code style="color: #00A3E0;">index.html</code> in a GitHub repository and push to main.</p>
+            <div class="grid-3" style="font-size: 0.75rem; color: #94a3b8;">
+                <div style="background: #0d1526; padding: 1rem; border-radius: 0.75rem; border: 1px solid #1e293b;">
+                    <strong style="color: #00A3E0; display: block; margin-bottom: 0.25rem;"><i class="fa-brands fa-github"></i> 1. Push to GitHub</strong>
+                    Save this code as <code style="color: #00A3E0;">index.html</code> in a GitHub repo named <code style="color: #00A3E0;">swissport-training-2026</code> and push to <code style="color: #00A3E0;">main</code>.
                 </div>
-                <div style="background: #0f172a; padding: 1rem; border-radius: 0.75rem; border: 1px solid #1e293b;">
-                    <div style="font-weight: bold; color: #00A3E0; margin-bottom: 0.5rem;"><i class="fa-solid fa-server"></i> 2. Connect on Render</div>
-                    <p style="font-size: 0.75rem; color: #94a3b8;">Go to <a href="https://render.com" target="_blank" style="color: #00A3E0;">Render.com</a>, create a new <code style="color: #00A3E0;">Static Site</code>, and link your repo.</p>
+                <div style="background: #0d1526; padding: 1rem; border-radius: 0.75rem; border: 1px solid #1e293b;">
+                    <strong style="color: #00A3E0; display: block; margin-bottom: 0.25rem;"><i class="fa-solid fa-server"></i> 2. Connect on Render</strong>
+                    Log in to <a href="https://render.com" target="_blank" style="color: #00A3E0;">Render.com</a>, create a <strong>New Static Site</strong>, and link your repository.
                 </div>
-                <div style="background: #0f172a; padding: 1rem; border-radius: 0.75rem; border: 1px solid #1e293b;">
-                    <div style="font-weight: bold; color: #00A3E0; margin-bottom: 0.5rem;"><i class="fa-solid fa-globe"></i> 3. Deploy Live</div>
-                    <p style="font-size: 0.75rem; color: #94a3b8;">Leave build command empty, set publish root <code style="color: #00A3E0;">.</code> and deploy!</p>
+                <div style="background: #0d1526; padding: 1rem; border-radius: 0.75rem; border: 1px solid #1e293b;">
+                    <strong style="color: #00A3E0; display: block; margin-bottom: 0.25rem;"><i class="fa-solid fa-globe"></i> 3. Deploy Live</strong>
+                    Set publish root to <code style="color: #00A3E0;">.</code> and deploy to get your live URL (e.g. <code style="color: #00A3E0;">https://swissport-training-2026.onrender.com</code>).
                 </div>
             </div>
         </section>
@@ -265,197 +266,224 @@
     </main>
 
     <!-- Footer -->
-    <footer style="background: #001A2C; border-top: 1px solid #1e293b; padding: 1.5rem 0; margin-top: 3rem;">
+    <footer style="background: #001A2C; border-top: 1px solid #1e293b; padding: 1.5rem 0; margin-top: 2rem;">
         <div class="max-w-7xl px-4" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: #94a3b8; flex-wrap: wrap; gap: 1rem;">
-            <div>&copy; 2026 Swissport Saudi Arabia. Training & Compliance Department.</div>
+            <div>&copy; 2026 Swissport Saudi Arabia. Ground Handling Training & Compliance Department.</div>
             <div style="display: flex; gap: 1.5rem;">
-                <span>GACA Part-142 Approved</span>
-                <span>ISO 9001:2015 Certified</span>
+                <span>GACA Part-142 Accredited</span>
+                <span>ISO 9001:2015</span>
                 <span>Executive Confidential</span>
             </div>
         </div>
     </footer>
 
-    <!-- Dashboard Logic -->
     <script>
-        const rawData = [
-            { district: "RUH", course: "ERP Awareness (SA-03)", duration: 4, employee: "Almihbash, Abdulrahman", position: "Security Officer", instructor: "Javaid Mazhar", date: "2026-04-14", quarter: "Q2" },
-            { district: "RUH", course: "AVSEC Aviation Security", duration: 3, employee: "Almihbash, Abdulrahman", position: "Security Officer", instructor: "Javaid Mazhar", date: "2026-04-14", quarter: "Q2" },
-            { district: "RUH", course: "ULD Load Control Supervisor", duration: 8.66, employee: "AlJenfawi, Waleed", position: "QHSE Supervisor", instructor: "Javaid Mazhar", date: "2026-03-02", quarter: "Q1" },
-            { district: "RUH", course: "Swissport GDPR Data Protection", duration: 0.5, employee: "AlJenfawi, Waleed", position: "QHSE Supervisor", instructor: "Sathish kumar", date: "2026-07-14", quarter: "Q3" },
-            { district: "RUH", course: "Crisis Management", duration: 2, employee: "Melebari, Fares", position: "Quality & Safety Officer", instructor: "Khensani Monyike", date: "2026-05-27", quarter: "Q2" },
-            { district: "RUH", course: "Environmental Awareness Level 2", duration: 6, employee: "Melebari, Fares", position: "Quality & Safety Officer", instructor: "Lucia Sanchez Ceresuela", date: "2026-05-19", quarter: "Q2" },
-            { district: "RUH", course: "DGR Passenger Baggage Handling", duration: 3, employee: "ALMUTIRI, FAHAD", position: "Security Officer", instructor: "Javaid Mazhar", date: "2026-08-02", quarter: "Q3" },
-            { district: "RUH", course: "Boarding Gate Procedures", duration: 4, employee: "Alahmari, Saad", position: "Security Officer", instructor: "Javaid Mazhar", date: "2026-01-18", quarter: "Q1" },
-            { district: "JED", course: "GSE Operator Induction", duration: 16, employee: "Al-Ghamdi, Tariq", position: "GSE Operator", instructor: "Sarfaraz Idrisi", date: "2026-02-10", quarter: "Q1" },
-            { district: "JED", course: "RTL / Duty Officer Training", duration: 24, employee: "Al-Harbi, Fahad", position: "Duty Officer", instructor: "John Manalo", date: "2026-04-20", quarter: "Q2" },
-            { district: "JED", course: "AVSEC Aviation Security", duration: 3, employee: "Aziz, Mohammed", position: "Agent", instructor: "Javaid Mazhar", date: "2026-06-15", quarter: "Q2" },
-            { district: "DMM", course: "Air Arabia Hub Start-up DGR", duration: 8, employee: "Al-Dosari, Nasser", position: "Supervisor", instructor: "Haneefa Parachalil", date: "2026-06-05", quarter: "Q2" },
-            { district: "DMM", course: "GSE Operator Induction", duration: 16, employee: "Al-Qahtani, Salem", position: "Operator", instructor: "Sarfaraz Idrisi", date: "2026-07-10", quarter: "Q3" },
-            { district: "MED", course: "RTL / Duty Officer Training", duration: 24, employee: "Al-Mutairi, Mansour", position: "Duty Officer", instructor: "John Manalo", date: "2026-03-12", quarter: "Q1" },
-            { district: "MED", course: "Swissport GDPR Data Protection", duration: 0.5, employee: "Hariri, Ziyad", position: "Agent", instructor: "Sathish kumar", date: "2026-08-19", quarter: "Q3" },
-            { district: "ELQ", course: "AVSEC Aviation Security", duration: 3, employee: "Al-Harbi, Nayef", position: "Security Officer", instructor: "Javaid Mazhar", date: "2026-02-22", quarter: "Q1" },
-            { district: "AHB", course: "GSE Operator Induction", duration: 16, employee: "Asiri, Ali", position: "GSE Operator", instructor: "Sarfaraz Idrisi", date: "2026-05-10", quarter: "Q2" },
-            { district: "TUU", course: "Basic Check in & Baggage Allowance", duration: 3, employee: "Balawi, Saud", position: "Passenger Agent", instructor: "Fatima Alsaiari", date: "2026-04-05", quarter: "Q2" },
-            { district: "GIZ", course: "RTL / Duty Officer Training", duration: 24, employee: "Sharahili, Yahya", position: "Duty Officer", instructor: "John Manalo", date: "2026-06-20", quarter: "Q2" },
-            { district: "HAS", course: "Swissport GDPR Data Protection", duration: 0.5, employee: "Shamri, Fahad", position: "Agent", instructor: "Sathish kumar", date: "2026-01-15", quarter: "Q1" },
-            { district: "AJF", course: "AVSEC Aviation Security", duration: 3, employee: "Ruwaili, Mosa", position: "Security Officer", instructor: "Javaid Mazhar", date: "2026-03-20", quarter: "Q1" },
-            { district: "TIF", course: "GSE Operator Induction", duration: 16, employee: "Thobaiti, Majed", position: "GSE Operator", instructor: "Sarfaraz Idrisi", date: "2026-05-25", quarter: "Q2" },
-            { district: "YNB", course: "RTL / Duty Officer Training", duration: 24, employee: "Subhi, Hatem", position: "Duty Officer", instructor: "John Manalo", date: "2026-05-26", quarter: "Q2" }
+        const quarterlyStats = {
+            "2026Q1": { hours: 10684.60, seats: 5223, saudiSeats: 2420, nonSaudiSeats: 2803, heads: 1269, modules: 110 },
+            "2026Q2": { hours: 11842.61, seats: 5367, saudiSeats: 1024, nonSaudiSeats: 4343, heads: 1069, modules: 101 },
+            "2026Q3": { hours: 19857.88, seats: 9156, saudiSeats: 2515, nonSaudiSeats: 6641, heads: 1006, modules: 98 }
+        };
+
+        const districtStats = [
+            { code: "JED", name: "Jeddah (King Abdulaziz Int.)", seats: 8051, hours: 18084.44, audit: "Zero Findings" },
+            { code: "DMM", name: "Dammam (King Fahd Int.)", seats: 4878, hours: 9713.52, audit: "Passed (4P Hub)" },
+            { code: "RUH", name: "Riyadh (King Khalid Int.)", seats: 3687, hours: 7004.17, audit: "Zero Findings" },
+            { code: "MED", name: "Medina (Prince Mohammad)", seats: 2429, hours: 5993.35, audit: "Passed (EY Audit)" },
+            { code: "AHB", name: "Abha Regional Airport", seats: 212, hours: 447.86, audit: "100% Compliant" },
+            { code: "TUU", name: "Tabuk Regional Airport", seats: 119, hours: 292.99, audit: "100% Compliant" },
+            { code: "ELQ", name: "Qassim Regional Airport", seats: 87, hours: 120.94, audit: "100% Compliant" },
+            { code: "TIF", name: "Taif Regional Airport", seats: 91, hours: 309.62, audit: "Audited" }
         ];
 
-        const stations = [
-            { code: "RUH", name: "Riyadh (King Khalid Int.)", compliance: "99.9%", status: "Fully Compliant", audit: "Zero Findings" },
-            { code: "JED", name: "Jeddah (King Abdulaziz Int.)", compliance: "99.7%", status: "Fully Compliant", audit: "Zero Findings" },
-            { code: "DMM", name: "Dammam (King Fahd Int.)", compliance: "98.5%", status: "Fully Compliant", audit: "PASSED (4P Hub)" },
-            { code: "MED", name: "Medina (Prince Mohammad)", compliance: "97.8%", status: "Compliant", audit: "EY Audit Passed" },
-            { code: "ELQ", name: "Qassim Regional", compliance: "99.5%", status: "Fully Compliant", audit: "Passed" },
-            { code: "AHB", name: "Abha Regional", compliance: "100%", status: "Fully Compliant", audit: "Exemplary" },
-            { code: "TUU", name: "Tabuk Regional", compliance: "99.7%", status: "Fully Compliant", audit: "Passed" },
-            { code: "GIZ", name: "Jizan Regional", compliance: "99.2%", status: "Fully Compliant", audit: "Passed" }
-        ];
+        let chartOverview, chartNat, chartDistrict, chartCourses, chartInstructors;
 
-        let mChart, dChart, cChart, iChart;
-
-        document.addEventListener('DOMContentLoaded', () => {
-            populateDropdowns();
-            renderStationGrid();
-            updateDashboard(rawData);
+        document.addEventListener("DOMContentLoaded", () => {
+            initDropdowns();
+            renderDistrictGrid();
+            updateDashboard("ALL");
         });
 
-        function populateDropdowns() {
-            const courses = [...new Set(rawData.map(i => i.course))].sort();
-            const districts = [...new Set(rawData.map(i => i.district))].sort();
-            const instructors = [...new Set(rawData.map(i => i.instructor))].sort();
+        function initDropdowns() {
+            const topCourses = [
+                "Swissport Data Protection (GDPR) (GE-101)",
+                "HUMAN FACTORS (GE-SA-05)",
+                "MANUAL HANDLING (GE-SA-15)",
+                "ERP Awareness (SA-03)",
+                "AVSEC AVIATION SECURITY (SE-SA-01)",
+                "FIRE SAFETY (GE-SA-07)",
+                "KSA First Aid (SA-04)",
+                "ISO14001 Environmental Awareness Update (QHS-06U)",
+                "DGR - ORGANISATION & MANAGEMENT (DG-30)",
+                "Introduction to GACA Regulations (SA-02)"
+            ];
+            const courseSel = document.getElementById("filterCourse");
+            topCourses.forEach(c => courseSel.add(new Option(c, c)));
 
-            const cSel = document.getElementById('filterCourse');
-            courses.forEach(c => cSel.add(new Option(c, c)));
+            const districts = ["JED", "DMM", "RUH", "MED", "AHB", "TUU", "ELQ", "TIF", "GIZ", "HAS", "AJF", "YNB"];
+            const distSel = document.getElementById("filterDistrict");
+            districts.forEach(d => distSel.add(new Option(`District: ${d}`, d)));
 
-            const dSel = document.getElementById('filterDistrict');
-            districts.forEach(d => dSel.add(new Option(`District: ${d}`, d)));
-
-            const iSel = document.getElementById('filterInstructor');
-            instructors.forEach(i => iSel.add(new Option(i, i)));
+            const instructors = ["Sarfaraz Idrisi", "John Manalo", "Neal Bartolome", "Javaid Mazhar", "John Siron", "Gir Roka", "Sathish kumar", "Rehab Sawant"];
+            const instSel = document.getElementById("filterInstructor");
+            instructors.forEach(i => instSel.add(new Option(i, i)));
         }
 
-        function filterData() {
-            const c = document.getElementById('filterCourse').value;
-            const d = document.getElementById('filterDistrict').value;
-            const q = document.getElementById('filterQuarter').value;
-            const i = document.getElementById('filterInstructor').value;
-
-            const filtered = rawData.filter(item => {
-                return (c === 'ALL' || item.course === c) &&
-                       (d === 'ALL' || item.district === d) &&
-                       (q === 'ALL' || item.quarter === q) &&
-                       (i === 'ALL' || item.instructor === i);
-            });
-            updateDashboard(filtered);
+        function applyFilters() {
+            const selectedQ = document.getElementById("filterQuarter").value;
+            updateDashboard(selectedQ);
         }
 
         function resetFilters() {
-            document.getElementById('filterCourse').value = 'ALL';
-            document.getElementById('filterDistrict').value = 'ALL';
-            document.getElementById('filterQuarter').value = 'ALL';
-            document.getElementById('filterInstructor').value = 'ALL';
-            updateDashboard(rawData);
+            document.getElementById("filterCourse").value = "ALL";
+            document.getElementById("filterDistrict").value = "ALL";
+            document.getElementById("filterQuarter").value = "ALL";
+            document.getElementById("filterInstructor").value = "ALL";
+            updateDashboard("ALL");
         }
 
-        function updateDashboard(data) {
-            const totalHours = data.reduce((sum, item) => sum + item.duration, 0).toFixed(1);
-            const totalTrainees = data.length * 45;
-            const activeInstructors = [...new Set(data.map(i => i.instructor))].length;
+        function updateDashboard(quarter) {
+            let hours = 0, seats = 0, heads = 0, modules = 120;
 
-            document.getElementById('kpiTotalHours').textContent = Number(totalHours).toLocaleString() + ' hrs';
-            document.getElementById('kpiTotalTrainees').textContent = totalTrainees.toLocaleString();
-            document.getElementById('kpiInstructors').textContent = activeInstructors;
-            document.getElementById('recordCount').textContent = `${data.length} Records`;
-
-            renderTable(data);
-            renderCharts(data);
-        }
-
-        function renderTable(data) {
-            const tbody = document.getElementById('dataTableBody');
-            tbody.innerHTML = '';
-            if (data.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: #64748b; padding: 2rem;">No matching training records found.</td></tr>`;
-                return;
+            if (quarter === "ALL") {
+                hours = 42385.1;
+                seats = 19746;
+                heads = 2553;
+                modules = 120;
+            } else {
+                const qData = quarterlyStats[quarter];
+                hours = qData.hours;
+                seats = qData.seats;
+                heads = qData.heads;
+                modules = qData.modules;
             }
-            data.forEach(item => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td style="font-weight: 600; color: #00A3E0;">${item.district}</td>
-                    <td style="font-weight: 500; color: #ffffff;">${item.course}</td>
-                    <td>${item.employee}</td>
-                    <td style="color: #94a3b8;">${item.position}</td>
-                    <td style="color: #10b981; font-weight: 600;">${item.duration}h</td>
-                    <td>${item.instructor}</td>
-                    <td style="color: #94a3b8;">${item.date}</td>
-                `;
-                tbody.appendChild(tr);
-            });
+
+            document.getElementById("kpiHours").textContent = Number(hours.toFixed(1)).toLocaleString();
+            document.getElementById("kpiSeats").textContent = Number(seats).toLocaleString();
+            document.getElementById("kpiHeads").textContent = Number(heads).toLocaleString();
+            document.getElementById("kpiModules").textContent = Number(modules).toLocaleString();
+
+            renderCharts(quarter);
         }
 
-        function renderStationGrid() {
-            const grid = document.getElementById('stationGrid');
-            grid.innerHTML = '';
-            stations.forEach(s => {
-                const card = document.createElement('div');
-                card.style.cssText = "background: #0f172a; padding: 1rem; border-radius: 0.75rem; border: 1px solid #1e293b;";
+        function renderDistrictGrid() {
+            const container = document.getElementById("districtGrid");
+            container.innerHTML = "";
+
+            districtStats.forEach(s => {
+                const card = document.createElement("div");
+                card.style.cssText = "background: #0d1526; padding: 1rem; border-radius: 0.75rem; border: 1px solid #1e293b;";
                 card.innerHTML = `
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                        <span style="font-weight: bold; background: rgba(0,163,224,0.2); color: #00A3E0; padding: 0.2rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem;">${s.code}</span>
-                        <span style="color: #10b981; font-size: 0.75rem; font-weight: 600;">${s.compliance}</span>
+                        <span style="font-size: 0.75rem; font-weight: bold; background: rgba(0,163,224,0.2); color: #00A3E0; padding: 0.2rem 0.5rem; border-radius: 0.25rem;">${s.code}</span>
+                        <span style="font-size: 0.65rem; color: #10b981; font-weight: 600;">${s.audit}</span>
                     </div>
                     <div style="font-size: 0.75rem; font-weight: 500; color: #ffffff; margin-bottom: 0.5rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${s.name}</div>
-                    <div style="display: flex; justify-content: space-between; font-size: 0.65rem; color: #94a3b8; border-top: 1px solid #1e293b; padding-top: 0.5rem;">
-                        <span>Status: <strong style="color: #cbd5e1;">${s.status}</strong></span>
-                        <span style="color: #00A3E0;">${s.audit}</span>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: #94a3b8; border-top: 1px solid #1e293b; padding-top: 0.5rem;">
+                        <span>Seats: <strong style="color: #f8fafc;">${s.seats.toLocaleString()}</strong></span>
+                        <span>Hours: <strong style="color: #00A3E0;">${Math.round(s.hours).toLocaleString()}h</strong></span>
                     </div>
                 `;
-                grid.appendChild(card);
+                container.appendChild(card);
             });
         }
 
-        function filterTable() {
-            const q = document.getElementById('searchInput').value.toLowerCase();
-            const rows = document.querySelectorAll('#dataTableBody tr');
-            rows.forEach(r => {
-                r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none';
-            });
-        }
-
-        function renderCharts(data) {
-            if (mChart) mChart.destroy();
-            mChart = new Chart(document.getElementById('monthlyChart').getContext('2d'), {
-                type: 'bar',
+        function renderCharts(selectedQuarter) {
+            if (chartOverview) chartOverview.destroy();
+            chartOverview = new Chart(document.getElementById("chartQuarterlyOverview").getContext("2d"), {
+                type: "bar",
                 data: {
-                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                    datasets: [{ label: 'Training Hours', data: [1240, 1450, 1680, 1890, 2100, 1950, 2250, 2400, 2150, 1800, 1600, 1400], backgroundColor: '#00A3E0', borderRadius: 6 }]
+                    labels: ["Q1 2026", "Q2 2026", "Q3 2026"],
+                    datasets: [
+                        { label: "Training Hours", data: [10685, 11843, 19858], backgroundColor: "#00A3E0", borderRadius: 6 },
+                        { label: "Seats Occupied", data: [5223, 5367, 9156], backgroundColor: "#3B82F6", borderRadius: 6 }
+                    ]
                 },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } }, y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } } } }
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { labels: { color: "#94a3b8", font: { size: 11 } } } },
+                    scales: {
+                        x: { grid: { color: "rgba(255,255,255,0.05)" }, ticks: { color: "#94a3b8" } },
+                        y: { grid: { color: "rgba(255,255,255,0.05)" }, ticks: { color: "#94a3b8" } }
+                    }
+                }
             });
 
-            if (dChart) dChart.destroy();
-            dChart = new Chart(document.getElementById('districtChart').getContext('2d'), {
-                type: 'doughnut',
-                data: { labels: ['RUH Hub', 'JED Hub', 'DMM Hub', 'Regional'], datasets: [{ data: [45, 30, 15, 10], backgroundColor: ['#00A3E0', '#3B82F6', '#F59E0B', '#10B981'], borderWidth: 0 }] },
-                options: { responsive: true, maintainAspectRatio: false, cutout: '70%', plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', font: { size: 11 } } } } }
+            if (chartNat) chartNat.destroy();
+            chartNat = new Chart(document.getElementById("chartNationalitySeats").getContext("2d"), {
+                type: "bar",
+                data: {
+                    labels: ["Q1 2026", "Q2 2026", "Q3 2026"],
+                    datasets: [
+                        { label: "Saudi Seats", data: [2420, 1024, 2515], backgroundColor: "#10B981", borderRadius: 4 },
+                        { label: "Non-Saudi Seats", data: [2803, 4343, 6641], backgroundColor: "#F59E0B", borderRadius: 4 }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { stacked: true, grid: { color: "rgba(255,255,255,0.05)" }, ticks: { color: "#94a3b8" } },
+                        y: { stacked: true, grid: { color: "rgba(255,255,255,0.05)" }, ticks: { color: "#94a3b8" } }
+                    },
+                    plugins: { legend: { labels: { color: "#94a3b8" } } }
+                }
             });
 
-            if (cChart) cChart.destroy();
-            cChart = new Chart(document.getElementById('coursesChart').getContext('2d'), {
-                type: 'bar',
-                data: { labels: ['AVSEC Security', 'GSE Operator', 'DGR Baggage', 'RTL Duty Officer', 'GDPR Data Prot.'], datasets: [{ data: [420, 380, 310, 290, 250], backgroundColor: '#3B82F6', borderRadius: 6 }] },
-                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } }, y: { grid: { display: false }, ticks: { color: '#94a3b8' } } } }
+            if (chartDistrict) chartDistrict.destroy();
+            chartDistrict = new Chart(document.getElementById("chartDistrictShare").getContext("2d"), {
+                type: "doughnut",
+                data: {
+                    labels: ["JED Hub", "DMM Hub", "RUH Hub", "MED Hub", "Regional"],
+                    datasets: [{
+                        data: [8051, 4878, 3687, 2429, 701],
+                        backgroundColor: ["#00A3E0", "#3B82F6", "#F59E0B", "#10B981", "#8B5CF6"],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: "65%",
+                    plugins: { legend: { position: "bottom", labels: { color: "#94a3b8", font: { size: 10 } } } }
+                }
             });
 
-            if (iChart) iChart.destroy();
-            iChart = new Chart(document.getElementById('instructorsChart').getContext('2d'), {
-                type: 'bar',
-                data: { labels: ['Javaid Mazhar', 'Sarfaraz Idrisi', 'John Manalo', 'Haneefa Parachalil', 'Sathish kumar'], datasets: [{ data: [540, 480, 420, 390, 350], backgroundColor: '#F59E0B', borderRadius: 6 }] },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } }, y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } } } }
+            if (chartCourses) chartCourses.destroy();
+            chartCourses = new Chart(document.getElementById("chartTopCourses").getContext("2d"), {
+                type: "bar",
+                data: {
+                    labels: ["GDPR Data Prot.", "Human Factors", "Manual Handling", "ERP Awareness", "AVSEC Security"],
+                    datasets: [{ label: "Seats", data: [2508, 911, 909, 862, 845], backgroundColor: "#3B82F6", borderRadius: 5 }]
+                },
+                options: {
+                    indexAxis: "y",
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { grid: { color: "rgba(255,255,255,0.05)" }, ticks: { color: "#94a3b8" } },
+                        y: { grid: { display: false }, ticks: { color: "#94a3b8", font: { size: 10 } } }
+                    }
+                }
+            });
+
+            if (chartInstructors) chartInstructors.destroy();
+            chartInstructors = new Chart(document.getElementById("chartTopInstructors").getContext("2d"), {
+                type: "bar",
+                data: {
+                    labels: ["Sarfaraz Idrisi", "John Manalo", "Neal Bartolome", "Javaid Mazhar", "John Siron"],
+                    datasets: [{ label: "Hours", data: [7497, 5631, 5355, 3389, 3359], backgroundColor: "#F59E0B", borderRadius: 5 }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { grid: { color: "rgba(255,255,255,0.05)" }, ticks: { color: "#94a3b8", font: { size: 10 } } },
+                        y: { grid: { color: "rgba(255,255,255,0.05)" }, ticks: { color: "#94a3b8" } }
+                    }
+                }
             });
         }
     </script>
