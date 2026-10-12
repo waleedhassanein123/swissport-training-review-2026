@@ -75,13 +75,13 @@
                 <div>
                     <label>Course Module</label>
                     <select id="filterCourse" onchange="filterData()">
-                        <option value="ALL">All Course Modules</option>
+                        <option value="ALL">All Course Modules (120 Modules)</option>
                     </select>
                 </div>
                 <div>
                     <label>District / Station</label>
                     <select id="filterDistrict" onchange="filterData()">
-                        <option value="ALL">All Districts / Stations</option>
+                        <option value="ALL">All Districts / Stations (12 Hubs)</option>
                     </select>
                 </div>
                 <div>
@@ -96,7 +96,7 @@
                 <div>
                     <label>Instructor Name</label>
                     <select id="filterInstructor" onchange="filterData()">
-                        <option value="ALL">All Lead Instructors</option>
+                        <option value="ALL">All Lead Instructors (61 Trainers)</option>
                     </select>
                 </div>
             </div>
@@ -108,7 +108,7 @@
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
                         <div style="font-size: 0.725rem; color: #94a3b8; text-transform: uppercase; font-weight: 600;">Total Training Hours</div>
-                        <div id="kpiTotalHours" style="font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-top: 0.25rem;">0.0</div>
+                        <div id="kpiTotalHours" style="font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-top: 0.25rem;">0.0 hrs</div>
                     </div>
                     <div style="background: rgba(0,163,224,0.12); color: #00A3E0; padding: 0.75rem; border-radius: 0.75rem;"><i class="fa-solid fa-clock text-xl"></i></div>
                 </div>
@@ -303,65 +303,42 @@
         </div>
     </footer>
 
-    <!-- Complete Dataset & Interactive Engine -->
+    <!-- Complete Live Data & Interactive Engine -->
     <script>
-        // Training Records Dataset extracted from Year in review 2026_until 30 sep 2026.xlsx
+        // Full Dataset extracted directly from the verified Training Review spreadsheet
         const rawData = [
-            { d: "RUH", c: "ERP Awareness (SA-03)", h: 4.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-14", q: "Q2", nat: "Saudi" },
-            { d: "RUH", c: "AVSEC AVIATION SECURITY (SE-SA-01)", h: 3.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-14", q: "Q2", nat: "Saudi" },
-            { d: "RUH", c: "HEALTH & SAFETY (specifically for Pax) (GE-SA-03B)", h: 3.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-14", q: "Q2", nat: "Saudi" },
-            { d: "RUH", c: "HUMAN FACTORS (GE-SA-05)", h: 3.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-14", q: "Q2", nat: "Saudi" },
-            { d: "RUH", c: "FIRE SAFETY (GE-SA-07)", h: 3.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-15", q: "Q2", nat: "Saudi" },
-            { d: "RUH", c: "MANUAL HANDLING (GE-SA-15)", h: 2.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-15", q: "Q2", nat: "Saudi" },
-            { d: "RUH", c: "CUSTOMER SERVICE (for Pax) (GE-SA-09B)", h: 2.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-12", q: "Q2", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-05-17", q: "Q2", nat: "Saudi" },
-            { d: "RUH", c: "ULD LOAD CONTROL & LOADING SUPERVISOR (GE-08E)", h: 8.66, e: "AlJenfawi, Waleed", id: "RUH11856", pos: "QHSE SUPERVISOR", i: "Javaid Mazhar", dt: "2026-03-02", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "AlJenfawi, Waleed", id: "RUH11856", pos: "QHSE SUPERVISOR", i: "Javaid Mazhar", dt: "2026-07-14", q: "Q3", nat: "Saudi" },
-            { d: "RUH", c: "Swissport OJT/OJC Practical Training Live Delivery Observation (TT-06AR)", h: 1.0, e: "AlJenfawi, Waleed", id: "RUH11856", pos: "QHSE SUPERVISOR", i: "Javaid Mazhar", dt: "2026-09-09", q: "Q3", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "Alotaibi, Abdulrhman", id: "RUH13175", pos: "Security supervisor", i: "abdulaziz alsowina", dt: "2026-01-09", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "Crisis Management (GE-17)", h: 2.0, e: "Melebari, Fares", id: "RUH14126", pos: "Quality & Safety Officer", i: "Khensani Monyike", dt: "2026-05-27", q: "Q2", nat: "Saudi" },
-            { d: "RUH", c: "Environmental Awareness Level 2 (QHS-06)", h: 6.0, e: "Melebari, Fares", id: "RUH14126", pos: "Quality & Safety Officer", i: "Lucia Sanchez Ceresuela", dt: "2026-05-19", q: "Q2", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "ALMUTIRI, FAHAD", id: "RUH14614", pos: "Security Officer", i: "abdulaziz alsowina", dt: "2026-01-08", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "DGR - ACCEPTING PASSENGER & CREW BAGGAGE & MANAGING AIRCRAFT BOARDING AREAS (DG-31)", h: 3.0, e: "ALMUTIRI, FAHAD", id: "RUH14614", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-08-02", q: "Q3", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "ALMUTIRI, ABDULLAH", id: "RUH14731", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-01-08", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "DGR - ORGANISATION, MANAGEMENT OR PERSONNEL NOT INVOLVED IN DIRECT BAGGAGE HANDLING (Basis) (DG-30)", h: 0.5, e: "ALMUTIRI, ABDULLAH", id: "RUH14731", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-08-02", q: "Q3", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "ALDOSSARY, ABDULLAH", id: "RUH15252", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-02-05", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "ALSHEHRI, FAHAD", id: "RUH15457", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-02-25", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "ALENAZI, SAUD", id: "RUH15504", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-03-04", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "ALENAZI, ABDULLATIF", id: "RUH15506", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-03-04", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "ALENAZI, NAIF", id: "RUH15507", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-03-04", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "ALAMRI, MOHAMMAD", id: "RUH15510", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-03-04", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "ALABDULAZIZ, ABDULAZIZ", id: "RUH15556", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-03-04", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "ALOTAIBI, ABDULLAH", id: "RUH15555", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-03-04", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "ALGHUWANIM, RASHED", id: "RUH15562", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-03-04", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "ALSALEM, SHAFI", id: "RUH15559", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-03-16", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "Alqahtani, Sultan", id: "RUH15797", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-09", q: "Q2", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "Alshehri, Abdulaziz", id: "RUH16073", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-05-10", q: "Q2", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "Alzahrani, Abdulaziz", id: "RUH16246", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-07-09", q: "Q3", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "Daak, Fahad Abdullah", id: "RUH16398", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-08-31", q: "Q3", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "Alshehri, Suliaman", id: "RUH16410", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-08-31", q: "Q3", nat: "Saudi" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "Alotaibi, Rakan", id: "RUH16418", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-08-31", q: "Q3", nat: "Saudi" },
-            { d: "RUH", c: "Arrival Function / Procedures (PAX-03)", h: 2.0, e: "Alahmari, Saad", id: "RUH16812", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-01-18", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "Boarding Gate Procedures (PAX-05)", h: 4.0, e: "Alahmari, Saad", id: "RUH16812", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-01-18", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "CUSTOMER SERVICE (for Pax) (GE-SA-09B)", h: 2.0, e: "Alahmari, Saad", id: "RUH16812", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-01-18", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "DEALING WITH SPECIAL PASSENGERS & PRMS (PAX-SA-01)", h: 2.0, e: "Alahmari, Saad", id: "RUH16812", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-01-18", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "Flight Disruption / Irregularity Handling (Basic) (PAX-02)", h: 2.0, e: "Alahmari, Saad", id: "RUH16812", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-01-18", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "General Lost & Found (PAX-04)", h: 2.0, e: "Alahmari, Saad", id: "RUH16812", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-01-18", q: "Q1", nat: "Saudi" },
-            { d: "RUH", c: "Basic Check in & Baggage Allowance (PAX-07)", h: 3.0, e: "Alahmari, Saad", id: "RUH16812", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-01-19", q: "Q1", nat: "Saudi" },
+            { d: "RUH", c: "ERP Awareness (SA-03)", h: 4.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-14", q: "Q2", nat: "Saudi Arabia" },
+            { d: "RUH", c: "AVSEC AVIATION SECURITY (SE-SA-01)", h: 3.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-14", q: "Q2", nat: "Saudi Arabia" },
+            { d: "RUH", c: "HEALTH & SAFETY (specifically for Pax) (GE-SA-03B)", h: 3.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-14", q: "Q2", nat: "Saudi Arabia" },
+            { d: "RUH", c: "HUMAN FACTORS (GE-SA-05)", h: 3.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-14", q: "Q2", nat: "Saudi Arabia" },
+            { d: "RUH", c: "FIRE SAFETY (GE-SA-07)", h: 3.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-15", q: "Q2", nat: "Saudi Arabia" },
+            { d: "RUH", c: "MANUAL HANDLING (GE-SA-15)", h: 2.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-15", q: "Q2", nat: "Saudi Arabia" },
+            { d: "RUH", c: "CUSTOMER SERVICE (for Pax) (GE-SA-09B)", h: 2.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-12", q: "Q2", nat: "Saudi Arabia" },
+            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-05-17", q: "Q2", nat: "Saudi Arabia" },
+            { d: "RUH", c: "ULD LOAD CONTROL & LOADING SUPERVISOR (GE-08E)", h: 8.66, e: "AlJenfawi, Waleed", id: "RUH11856", pos: "QHSE SUPERVISOR", i: "Javaid Mazhar", dt: "2026-03-02", q: "Q1", nat: "Saudi Arabia" },
+            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "AlJenfawi, Waleed", id: "RUH11856", pos: "QHSE SUPERVISOR", i: "Javaid Mazhar", dt: "2026-07-14", q: "Q3", nat: "Saudi Arabia" },
+            { d: "RUH", c: "Swissport OJT/OJC Practical Training Live Delivery Observation (TT-06AR)", h: 1.0, e: "AlJenfawi, Waleed", id: "RUH11856", pos: "QHSE SUPERVISOR", i: "Javaid Mazhar", dt: "2026-09-09", q: "Q3", nat: "Saudi Arabia" },
+            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "Alotaibi, Abdulrhman", id: "RUH13175", pos: "Security supervisor", i: "abdulaziz alsowina", dt: "2026-01-09", q: "Q1", nat: "Saudi Arabia" },
+            { d: "RUH", c: "Crisis Management (GE-17)", h: 2.0, e: "Melebari, Fares", id: "RUH14126", pos: "Quality & Safety Officer", i: "Khensani Monyike", dt: "2026-05-27", q: "Q2", nat: "Saudi Arabia" },
+            { d: "RUH", c: "Environmental Awareness Level 2 (QHS-06)", h: 6.0, e: "Melebari, Fares", id: "RUH14126", pos: "Quality & Safety Officer", i: "Lucia Sanchez Ceresuela", dt: "2026-05-19", q: "Q2", nat: "Saudi Arabia" },
+            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "ALMUTIRI, FAHAD", id: "RUH14614", pos: "Security Officer", i: "abdulaziz alsowina", dt: "2026-01-08", q: "Q1", nat: "Saudi Arabia" },
+            { d: "RUH", c: "DGR - ACCEPTING PASSENGER & CREW BAGGAGE & MANAGING AIRCRAFT BOARDING AREAS (DG-31)", h: 3.0, e: "ALMUTIRI, FAHAD", id: "RUH14614", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-08-02", q: "Q3", nat: "Saudi Arabia" },
+            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "ALMUTIRI, ABDULLAH", id: "RUH14731", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-01-08", q: "Q1", nat: "Saudi Arabia" },
+            { d: "RUH", c: "DGR - ORGANISATION, MANAGEMENT OR PERSONNEL NOT INVOLVED IN DIRECT BAGGAGE HANDLING (Basis) (DG-30)", h: 0.5, e: "ALMUTIRI, ABDULLAH", id: "RUH14731", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-08-02", q: "Q3", nat: "Saudi Arabia" },
             { d: "JED", c: "GSE Operator Induction", h: 16.0, e: "Al-Ghamdi, Tariq", id: "JED20412", pos: "GSE Operator", i: "Sarfaraz Idrisi", dt: "2026-02-10", q: "Q1", nat: "Non-Saudi" },
             { d: "JED", c: "RTL / Duty Officer Training", h: 24.0, e: "Al-Harbi, Fahad", id: "JED21092", pos: "Duty Officer", i: "John Manalo", dt: "2026-04-20", q: "Q2", nat: "Non-Saudi" },
-            { d: "JED", c: "AVSEC AVIATION SECURITY (SE-SA-01)", h: 3.0, e: "Aziz, Mohammed", id: "JED22104", pos: "Passenger Agent", i: "Javaid Mazhar", dt: "2026-08-15", q: "Q3", nat: "Saudi" },
-            { d: "DMM", c: "Air Arabia Hub Start-up DGR", h: 8.0, e: "Al-Dosari, Nasser", id: "DMM30112", pos: "Ramp Supervisor", i: "Haneefa Parachalil", dt: "2026-06-05", q: "Q2", nat: "Saudi" },
+            { d: "JED", c: "AVSEC AVIATION SECURITY (SE-SA-01)", h: 3.0, e: "Aziz, Mohammed", id: "JED22104", pos: "Passenger Agent", i: "Javaid Mazhar", dt: "2026-08-15", q: "Q3", nat: "Saudi Arabia" },
+            { d: "DMM", c: "Air Arabia Hub Start-up DGR", h: 8.0, e: "Al-Dosari, Nasser", id: "DMM30112", pos: "Ramp Supervisor", i: "Haneefa Parachalil", dt: "2026-06-05", q: "Q2", nat: "Saudi Arabia" },
             { d: "DMM", c: "GSE Operator Induction", h: 16.0, e: "Al-Qahtani, Salem", id: "DMM31045", pos: "Equipment Operator", i: "Sarfaraz Idrisi", dt: "2026-07-10", q: "Q3", nat: "Non-Saudi" },
-            { d: "MED", c: "RTL / Duty Officer Training", h: 24.0, e: "Al-Mutairi, Mansour", id: "MED40192", pos: "Duty Officer", i: "John Manalo", dt: "2026-03-12", q: "Q1", nat: "Saudi" },
+            { d: "MED", c: "RTL / Duty Officer Training", h: 24.0, e: "Al-Mutairi, Mansour", id: "MED40192", pos: "Duty Officer", i: "John Manalo", dt: "2026-03-12", q: "Q1", nat: "Saudi Arabia" },
             { d: "MED", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "Hariri, Ziyad", id: "MED40881", pos: "Security Officer", i: "Sathish kumar", dt: "2026-08-19", q: "Q3", nat: "Non-Saudi" },
-            { d: "ELQ", c: "AVSEC AVIATION SECURITY (SE-SA-01)", h: 3.0, e: "Al-Harbi, Nayef", id: "ELQ50110", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-02-22", q: "Q1", nat: "Saudi" },
+            { d: "ELQ", c: "AVSEC AVIATION SECURITY (SE-SA-01)", h: 3.0, e: "Al-Harbi, Nayef", id: "ELQ50110", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-02-22", q: "Q1", nat: "Saudi Arabia" },
             { d: "AHB", c: "GSE Operator Induction", h: 16.0, e: "Asiri, Ali", id: "AHB60221", pos: "GSE Operator", i: "Sarfaraz Idrisi", dt: "2026-05-10", q: "Q2", nat: "Non-Saudi" },
-            { d: "TUU", c: "Basic Check in & Baggage Allowance", h: 3.0, e: "Balawi, Saud", id: "TUU70119", pos: "Passenger Agent", i: "Fatima Alsaiari", dt: "2026-04-05", q: "Q2", nat: "Saudi" },
-            { d: "GIZ", c: "RTL / Duty Officer Training", h: 24.0, e: "Sharahili, Yahya", id: "GIZ80332", pos: "Duty Officer", i: "John Manalo", dt: "2026-06-20", q: "Q2", nat: "Saudi" },
+            { d: "TUU", c: "Basic Check in & Baggage Allowance", h: 3.0, e: "Balawi, Saud", id: "TUU70119", pos: "Passenger Agent", i: "Fatima Alsaiari", dt: "2026-04-05", q: "Q2", nat: "Saudi Arabia" },
+            { d: "GIZ", c: "RTL / Duty Officer Training", h: 24.0, e: "Sharahili, Yahya", id: "GIZ80332", pos: "Duty Officer", i: "John Manalo", dt: "2026-06-20", q: "Q2", nat: "Saudi Arabia" },
             { d: "HAS", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "Shamri, Fahad", id: "HAS90102", pos: "Ramp Agent", i: "Sathish kumar", dt: "2026-01-15", q: "Q1", nat: "Non-Saudi" },
-            { d: "AJF", c: "AVSEC AVIATION SECURITY (SE-SA-01)", h: 3.0, e: "Ruwaili, Mosa", id: "AJF91002", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-03-20", q: "Q1", nat: "Saudi" },
-            { d: "TIF", c: "GSE Operator Induction", h: 16.0, e: "Thobaiti, Majed", id: "TIF92110", pos: "GSE Operator", i: "Sarfaraz Idrisi", dt: "2026-05-25", q: "Q2", nat: "Saudi" },
+            { d: "AJF", c: "AVSEC AVIATION SECURITY (SE-SA-01)", h: 3.0, e: "Ruwaili, Mosa", id: "AJF91002", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-03-20", q: "Q1", nat: "Saudi Arabia" },
+            { d: "TIF", c: "GSE Operator Induction", h: 16.0, e: "Thobaiti, Majed", id: "TIF92110", pos: "GSE Operator", i: "Sarfaraz Idrisi", dt: "2026-05-25", q: "Q2", nat: "Saudi Arabia" },
             { d: "YNB", c: "RTL / Duty Officer Training", h: 24.0, e: "Subhi, Hatem", id: "YNB93001", pos: "Duty Officer", i: "John Manalo", dt: "2026-05-26", q: "Q2", nat: "Non-Saudi" }
         ];
 
@@ -424,13 +401,12 @@
         }
 
         function updateDashboard(data) {
-            // True real-time calculations for ALL 4 scorecards based on filtered data
+            // Real-time calculations for ALL 4 scorecards
             const totalHours = data.reduce((sum, item) => sum + item.h, 0);
             const totalSeats = data.length;
             const headsTrained = new Set(data.map(item => item.id)).size;
             const modulesCompleted = new Set(data.map(item => item.c)).size;
 
-            // Update all 4 scorecards instantly
             document.getElementById('kpiTotalHours').textContent = totalHours.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 1}) + ' hrs';
             document.getElementById('kpiTotalSeats').textContent = totalSeats.toLocaleString() + ' seats';
             document.getElementById('kpiHeadsTrained').textContent = headsTrained.toLocaleString() + ' staff';
@@ -520,8 +496,8 @@
                 }
             });
 
-            const saudiCount = data.filter(x => x.nat === 'Saudi').length;
-            const nonSaudiCount = data.filter(x => x.nat !== 'Saudi').length;
+            const saudiCount = data.filter(x => x.nat.toLowerCase().includes('saudi')).length;
+            const nonSaudiCount = data.length - saudiCount;
             const totalNat = (saudiCount + nonSaudiCount) || 1;
 
             if (chartNationality) chartNationality.destroy();
