@@ -96,7 +96,7 @@
                 <div>
                     <label>Instructor Name</label>
                     <select id="filterInstructor" onchange="filterData()">
-                        <option value="ALL">All Lead Instructors (61 Trainers)</option>
+                        <option value="ALL">All Lead Instructors (Cleaned & Unified)</option>
                     </select>
                 </div>
             </div>
@@ -303,7 +303,7 @@
         </div>
     </footer>
 
-    <!-- Complete Live CSV Data Fetcher & Instructor Filtering Engine -->
+    <!-- Complete Live CSV Data Fetcher & Instructor Normalization Engine -->
     <script>
         let rawData = [];
         const stations = [
@@ -352,9 +352,18 @@
                     const employeeNum = row[5] || '';
                     const location = row[6] || '';
                     const lastDateStr = row[7] || '';
-                    const instructor = row[8] || '';
+                    let instructor = row[8] || '';
                     const nationality = row[9] || '';
                     const position = row[10] || '';
+
+                    // Normalize instructor name variations (e.g. "john manalo", "JOHN MANALO", "John manalo" -> "John Manalo")
+                    instructor = instructor.trim();
+                    if (instructor.toLowerCase() === 'john manalo') {
+                        instructor = 'John Manalo';
+                    } else if (instructor) {
+                        // Title case
+                        instructor = instructor.charAt(0).toUpperCase() + instructor.slice(1).toLowerCase();
+                    }
 
                     let q = 'Q1';
                     if (lastDateStr) {
@@ -371,7 +380,7 @@
                         h: duration,
                         e: employeeName,
                         id: employeeNum,
-                        i: instructor.trim(),
+                        i: instructor,
                         nat: nationality,
                         pos: position,
                         dt: lastDateStr,
@@ -443,7 +452,6 @@
         }
 
         function updateDashboard(data) {
-            // Accurate calculations for ALL 4 scorecards based on filtered records
             const totalHours = data.reduce((sum, item) => sum + item.h, 0);
             const totalSeats = data.length;
             const headsTrained = new Set(data.map(item => item.id)).size;
@@ -578,8 +586,8 @@
             chartInstructors = new Chart(document.getElementById('instructorsChart').getContext('2d'), {
                 type: 'bar',
                 data: {
-                    labels: ['Javaid Mazhar', 'Sarfaraz Idrisi', 'John Manalo', 'Haneefa Parachalil', 'Sathish kumar'],
-                    datasets: [{ label: 'Hours Delivered', data: [3540, 2880, 2420, 2190, 1850], backgroundColor: '#F59E0B', borderRadius: 6 }]
+                    labels: ['Sarfaraz Idrisi', 'John Manalo', 'Neal Bartolome', 'John Siron', 'Javaid Mazhar'],
+                    datasets: [{ label: 'Hours Delivered', data: [7496, 5673, 5355, 3396, 3389], backgroundColor: '#F59E0B', borderRadius: 6 }]
                 },
                 options: {
                     responsive: true,
