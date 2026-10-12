@@ -303,7 +303,7 @@
         </div>
     </footer>
 
-    <!-- Complete Live CSV Data Fetcher & Interactive Engine -->
+    <!-- Complete Live CSV Data Fetcher & Instructor Filtering Engine -->
     <script>
         let rawData = [];
         const stations = [
@@ -342,7 +342,6 @@
             rawData = [];
             for (let i = 1; i < lines.length; i++) {
                 if (!lines[i].trim()) continue;
-                // Basic CSV line parser handling quotes if needed
                 const row = parseCSVLine(lines[i]);
                 if (row.length >= headers.length) {
                     const district = row[0] || '';
@@ -357,7 +356,6 @@
                     const nationality = row[9] || '';
                     const position = row[10] || '';
 
-                    // Determine quarter from date
                     let q = 'Q1';
                     if (lastDateStr) {
                         const d = new Date(lastDateStr);
@@ -373,7 +371,7 @@
                         h: duration,
                         e: employeeName,
                         id: employeeNum,
-                        i: instructor,
+                        i: instructor.trim(),
                         nat: nationality,
                         pos: position,
                         dt: lastDateStr,
@@ -408,7 +406,7 @@
         function populateDropdowns() {
             const courses = [...new Set(rawData.map(i => i.c))].sort();
             const districts = [...new Set(rawData.map(i => i.d))].sort();
-            const instructors = [...new Set(rawData.map(i => i.i))].sort();
+            const instructors = [...new Set(rawData.map(i => i.i))].filter(Boolean).sort();
 
             const cSel = document.getElementById('filterCourse');
             courses.forEach(c => cSel.add(new Option(c, c)));
@@ -445,6 +443,7 @@
         }
 
         function updateDashboard(data) {
+            // Accurate calculations for ALL 4 scorecards based on filtered records
             const totalHours = data.reduce((sum, item) => sum + item.h, 0);
             const totalSeats = data.length;
             const headsTrained = new Set(data.map(item => item.id)).size;
@@ -467,7 +466,6 @@
                 tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: #64748b; padding: 2rem;">No matching training records found.</td></tr>`;
                 return;
             }
-            // Render first 500 rows for high performance
             const displayData = data.slice(0, 500);
             displayData.forEach(item => {
                 const tr = document.createElement('tr');
