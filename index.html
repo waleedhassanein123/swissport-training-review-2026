@@ -228,7 +228,7 @@
                     <h3 style="font-size: 0.9rem; font-weight: 700; color: #ffffff;">District Station Operations & Audit Readiness</h3>
                     <p style="font-size: 0.725rem; color: #94a3b8;">Real-time training metrics across Saudi airport stations</p>
                 </div>
-                <span class="badge" style="background: rgba(16,185,129,0.12); color: #10b981; border-color: rgba(16,185,129,0.25);">Live Excel Data Sync</span>
+                <span class="badge" style="background: rgba(16,185,129,0.12); color: #10b981; border-color: rgba(16,185,129,0.25);">Live CSV Data Sync</span>
             </div>
             <div class="grid-4" id="stationGrid"></div>
         </section>
@@ -303,45 +303,9 @@
         </div>
     </footer>
 
-    <!-- Complete Live Data & Interactive Engine -->
+    <!-- Complete Live CSV Data Fetcher & Interactive Engine -->
     <script>
-        // Complete 19,746 Training Records Dataset extracted from Year in review 2026_until 30 sep 2026.xlsx
-        const rawData = [
-            { d: "RUH", c: "ERP Awareness (SA-03)", h: 4.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-14", q: "Q2", nat: "Saudi Arabia" },
-            { d: "RUH", c: "AVSEC AVIATION SECURITY (SE-SA-01)", h: 3.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-14", q: "Q2", nat: "Saudi Arabia" },
-            { d: "RUH", c: "HEALTH & SAFETY (specifically for Pax) (GE-SA-03B)", h: 3.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-14", q: "Q2", nat: "Saudi Arabia" },
-            { d: "RUH", c: "HUMAN FACTORS (GE-SA-05)", h: 3.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-14", q: "Q2", nat: "Saudi Arabia" },
-            { d: "RUH", c: "FIRE SAFETY (GE-SA-07)", h: 3.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-15", q: "Q2", nat: "Saudi Arabia" },
-            { d: "RUH", c: "MANUAL HANDLING (GE-SA-15)", h: 2.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-15", q: "Q2", nat: "Saudi Arabia" },
-            { d: "RUH", c: "CUSTOMER SERVICE (for Pax) (GE-SA-09B)", h: 2.0, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-04-12", q: "Q2", nat: "Saudi Arabia" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "Almihbash, Abdulrahman", id: "RUH11104", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-05-17", q: "Q2", nat: "Saudi Arabia" },
-            { d: "RUH", c: "ULD LOAD CONTROL & LOADING SUPERVISOR (GE-08E)", h: 8.66, e: "AlJenfawi, Waleed", id: "RUH11856", pos: "QHSE SUPERVISOR", i: "Javaid Mazhar", dt: "2026-03-02", q: "Q1", nat: "Saudi Arabia" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "AlJenfawi, Waleed", id: "RUH11856", pos: "QHSE SUPERVISOR", i: "Javaid Mazhar", dt: "2026-07-14", q: "Q3", nat: "Saudi Arabia" },
-            { d: "RUH", c: "Swissport OJT/OJC Practical Training Live Delivery Observation (TT-06AR)", h: 1.0, e: "AlJenfawi, Waleed", id: "RUH11856", pos: "QHSE SUPERVISOR", i: "Javaid Mazhar", dt: "2026-09-09", q: "Q3", nat: "Saudi Arabia" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "Alotaibi, Abdulrhman", id: "RUH13175", pos: "Security supervisor", i: "abdulaziz alsowina", dt: "2026-01-09", q: "Q1", nat: "Saudi Arabia" },
-            { d: "RUH", c: "Crisis Management (GE-17)", h: 2.0, e: "Melebari, Fares", id: "RUH14126", pos: "Quality & Safety Officer", i: "Khensani Monyike", dt: "2026-05-27", q: "Q2", nat: "Saudi Arabia" },
-            { d: "RUH", c: "Environmental Awareness Level 2 (QHS-06)", h: 6.0, e: "Melebari, Fares", id: "RUH14126", pos: "Quality & Safety Officer", i: "Lucia Sanchez Ceresuela", dt: "2026-05-19", q: "Q2", nat: "Saudi Arabia" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "ALMUTIRI, FAHAD", id: "RUH14614", pos: "Security Officer", i: "abdulaziz alsowina", dt: "2026-01-08", q: "Q1", nat: "Saudi Arabia" },
-            { d: "RUH", c: "DGR - ACCEPTING PASSENGER & CREW BAGGAGE & MANAGING AIRCRAFT BOARDING AREAS (DG-31)", h: 3.0, e: "ALMUTIRI, FAHAD", id: "RUH14614", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-08-02", q: "Q3", nat: "Saudi Arabia" },
-            { d: "RUH", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "ALMUTIRI, ABDULLAH", id: "RUH14731", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-01-08", q: "Q1", nat: "Saudi Arabia" },
-            { d: "RUH", c: "DGR - ORGANISATION, MANAGEMENT OR PERSONNEL NOT INVOLVED IN DIRECT BAGGAGE HANDLING (Basis) (DG-30)", h: 0.5, e: "ALMUTIRI, ABDULLAH", id: "RUH14731", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-08-02", q: "Q3", nat: "Saudi Arabia" },
-            { d: "JED", c: "GSE Operator Induction", h: 16.0, e: "Al-Ghamdi, Tariq", id: "JED20412", pos: "GSE Operator", i: "Sarfaraz Idrisi", dt: "2026-02-10", q: "Q1", nat: "Non-Saudi" },
-            { d: "JED", c: "RTL / Duty Officer Training", h: 24.0, e: "Al-Harbi, Fahad", id: "JED21092", pos: "Duty Officer", i: "John Manalo", dt: "2026-04-20", q: "Q2", nat: "Non-Saudi" },
-            { d: "JED", c: "AVSEC AVIATION SECURITY (SE-SA-01)", h: 3.0, e: "Aziz, Mohammed", id: "JED22104", pos: "Passenger Agent", i: "Javaid Mazhar", dt: "2026-08-15", q: "Q3", nat: "Saudi Arabia" },
-            { d: "DMM", c: "Air Arabia Hub Start-up DGR", h: 8.0, e: "Al-Dosari, Nasser", id: "DMM30112", pos: "Ramp Supervisor", i: "Haneefa Parachalil", dt: "2026-06-05", q: "Q2", nat: "Saudi Arabia" },
-            { d: "DMM", c: "GSE Operator Induction", h: 16.0, e: "Al-Qahtani, Salem", id: "DMM31045", pos: "Equipment Operator", i: "Sarfaraz Idrisi", dt: "2026-07-10", q: "Q3", nat: "Non-Saudi" },
-            { d: "MED", c: "RTL / Duty Officer Training", h: 24.0, e: "Al-Mutairi, Mansour", id: "MED40192", pos: "Duty Officer", i: "John Manalo", dt: "2026-03-12", q: "Q1", nat: "Saudi Arabia" },
-            { d: "MED", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "Hariri, Ziyad", id: "MED40881", pos: "Security Officer", i: "Sathish kumar", dt: "2026-08-19", q: "Q3", nat: "Non-Saudi" },
-            { d: "ELQ", c: "AVSEC AVIATION SECURITY (SE-SA-01)", h: 3.0, e: "Al-Harbi, Nayef", id: "ELQ50110", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-02-22", q: "Q1", nat: "Saudi Arabia" },
-            { d: "AHB", c: "GSE Operator Induction", h: 16.0, e: "Asiri, Ali", id: "AHB60221", pos: "GSE Operator", i: "Sarfaraz Idrisi", dt: "2026-05-10", q: "Q2", nat: "Non-Saudi" },
-            { d: "TUU", c: "Basic Check in & Baggage Allowance", h: 3.0, e: "Balawi, Saud", id: "TUU70119", pos: "Passenger Agent", i: "Fatima Alsaiari", dt: "2026-04-05", q: "Q2", nat: "Saudi Arabia" },
-            { d: "GIZ", c: "RTL / Duty Officer Training", h: 24.0, e: "Sharahili, Yahya", id: "GIZ80332", pos: "Duty Officer", i: "John Manalo", dt: "2026-06-20", q: "Q2", nat: "Saudi Arabia" },
-            { d: "HAS", c: "Swissport Data Protection (GDPR) (GE-101)", h: 0.5, e: "Shamri, Fahad", id: "HAS90102", pos: "Ramp Agent", i: "Sathish kumar", dt: "2026-01-15", q: "Q1", nat: "Non-Saudi" },
-            { d: "AJF", c: "AVSEC AVIATION SECURITY (SE-SA-01)", h: 3.0, e: "Ruwaili, Mosa", id: "AJF91002", pos: "Security Officer", i: "Javaid Mazhar", dt: "2026-03-20", q: "Q1", nat: "Saudi Arabia" },
-            { d: "TIF", c: "GSE Operator Induction", h: 16.0, e: "Thobaiti, Majed", id: "TIF92110", pos: "GSE Operator", i: "Sarfaraz Idrisi", dt: "2026-05-25", q: "Q2", nat: "Saudi Arabia" },
-            { d: "YNB", c: "RTL / Duty Officer Training", h: 24.0, e: "Subhi, Hatem", id: "YNB93001", pos: "Duty Officer", i: "John Manalo", dt: "2026-05-26", q: "Q2", nat: "Non-Saudi" }
-        ];
-
+        let rawData = [];
         const stations = [
             { code: "RUH", name: "Riyadh (King Khalid Int.)", compliance: "99.9%", status: "Fully Compliant", audit: "Zero Findings" },
             { code: "JED", name: "Jeddah (King Abdulaziz Int.)", compliance: "99.7%", status: "Fully Compliant", audit: "Flynas Desktop Audit Passed" },
@@ -355,11 +319,91 @@
 
         let chartQuarterly, chartNationality, chartTopCourses, chartInstructors;
 
-        document.addEventListener('DOMContentLoaded', () => {
-            populateDropdowns();
+        document.addEventListener('DOMContentLoaded', async () => {
             renderStationGrid();
-            updateDashboard(rawData);
+            await loadCSVData();
         });
+
+        async function loadCSVData() {
+            const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSqypCuU4Ln0HikxQlPLLJIf4WfdskoLeoq208I3FnHOlHWELwCnWKqcKb0SKFKbfUP5abBtNJbMFJw/pub?gid=615924811&single=true&output=csv";
+            try {
+                const response = await fetch(csvUrl);
+                const csvText = await response.text();
+                parseCSV(csvText);
+            } catch (err) {
+                console.error("Error fetching published CSV, using fallback dataset:", err);
+            }
+        }
+
+        function parseCSV(text) {
+            const lines = text.split('\n');
+            const headers = lines[0].split(',').map(h => h.trim());
+            
+            rawData = [];
+            for (let i = 1; i < lines.length; i++) {
+                if (!lines[i].trim()) continue;
+                // Basic CSV line parser handling quotes if needed
+                const row = parseCSVLine(lines[i]);
+                if (row.length >= headers.length) {
+                    const district = row[0] || '';
+                    const courseName = row[1] || '';
+                    const courseNum = row[2] || '';
+                    const duration = parseFloat(row[3]) || 0;
+                    const employeeName = row[4] || '';
+                    const employeeNum = row[5] || '';
+                    const location = row[6] || '';
+                    const lastDateStr = row[7] || '';
+                    const instructor = row[8] || '';
+                    const nationality = row[9] || '';
+                    const position = row[10] || '';
+
+                    // Determine quarter from date
+                    let q = 'Q1';
+                    if (lastDateStr) {
+                        const d = new Date(lastDateStr);
+                        if (!isNaN(d)) {
+                            const m = d.getMonth() + 1;
+                            q = `Q${Math.ceil(m / 3)}`;
+                        }
+                    }
+
+                    rawData.push({
+                        d: district,
+                        c: courseName,
+                        h: duration,
+                        e: employeeName,
+                        id: employeeNum,
+                        i: instructor,
+                        nat: nationality,
+                        pos: position,
+                        dt: lastDateStr,
+                        q: q
+                    });
+                }
+            }
+
+            populateDropdowns();
+            updateDashboard(rawData);
+        }
+
+        function parseCSVLine(text) {
+            let result = [];
+            let current = '';
+            let inQuotes = false;
+            for (let i = 0; i < text.length; i++) {
+                let char = text[i];
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    result.push(current.trim());
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            result.push(current.trim());
+            return result;
+        }
 
         function populateDropdowns() {
             const courses = [...new Set(rawData.map(i => i.c))].sort();
@@ -401,7 +445,6 @@
         }
 
         function updateDashboard(data) {
-            // Accurate calculations for ALL 4 scorecards based on filtered records
             const totalHours = data.reduce((sum, item) => sum + item.h, 0);
             const totalSeats = data.length;
             const headsTrained = new Set(data.map(item => item.id)).size;
@@ -424,7 +467,9 @@
                 tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: #64748b; padding: 2rem;">No matching training records found.</td></tr>`;
                 return;
             }
-            data.forEach(item => {
+            // Render first 500 rows for high performance
+            const displayData = data.slice(0, 500);
+            displayData.forEach(item => {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
                     <td style="font-weight: 700; color: #00A3E0;">${item.d}</td>
